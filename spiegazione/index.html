@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+      body {
+        font-family: "Roboto Mono", monospace;
+        max-width: 768px;
+        margin: 0 auto;
+        background-color: black;
+        color: rgb(13, 188, 13);
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      h1,
+      h2,
+      h3 {
+        margin-top: 1rem;
+        font-weight: 300;
+      }
+      .row {
+        justify-content: space-between;
+      }
+      div.col {
+        border: 1px solid rgb(13, 188, 13);
+        padding: 0 1rem;
+        margin: 1rem 0;
+      }
+    </style>
+    <title>Redux</title>
+  </head>
+  <body>
+    <header><h1>ReduxJS</h1></header>
+    <main>
+      <p>
+        Redux è un sistema che permette di avere uno stato condiviso fra tutta l'applicazione. È
+        utilizzabile su diversi framework oltre a React. Si può utilizzare anche con JS vanilla.
+        Permette quindi di rendere più scalabile un progetto.
+      </p>
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col">
+            <h2>Immutabilità</h2>
+            <p>
+              Essendo uno stato è Immutabile, cioè readonly e per modificarlo va creato un nuovo
+              stato per "sostituirlo"
+            </p>
+          </div>
+
+          <div class="col">
+            <h2>Stato Altamente Prevedibile(Higly predictable)</h2>
+            <p>
+              Quando si va ad aggiornare lo stato, le varie proprietà dello stato vengono sempre
+              cambiate una alla volta. Per esempio per cambiare 3 stati vanno fatte tre "richieste"
+              di cambiamento.
+            </p>
+          </div>
+        </div>
+        <div class="row gx-5">
+          <div class="col">
+            <h2>Redux risolve due problemi</h2>
+            <p>1 - Crea uno stato condiviso tra i diversi componenti</p>
+
+            <p>
+              Fino ad adesso, per condividere uno stato tra più componenti, l'unica soluzione era
+              elevare lo stato fino a raggiungere il componente padre di tutti quelli che si
+              desiderava "collegare". Questo può portare a uno scambio di props a volte non
+              necessario, ed il risultato è codice inutilmente complicato.
+            </p>
+            <p>
+              2 - Essendo questo staot condivso prevedibile ed immutabile rende l'applicazione
+              strutturalmente solida
+            </p>
+          </div>
+
+          <div class="col">
+            <h2>Redux Store(lo stato condiviso)</h2>
+            <p>Ad ogni modifica succederà un "dispatch" di una action</p>
+            <p>
+              Ad ogni "dispatch" di una action, un reducer si aziona automaticamente e generea un
+              nuovo stato partendo dallo stato precedente e dall'azione appena emessa
+            </p>
+            <p>
+              Questo nuovo stato va a sostituire completamente quello precedente. ed ogni compomente
+              collegato ad esso subirà un nuovo render
+            </p>
+          </div>
+        </div>
+        <div class="row gx-5">
+          <div class="col">
+            <h3>Cosa è una Action?</h3>
+            <p>
+              La Action è un oggetto JS, che contiene al suo interno almeno una proprietà chiamata
+              "type". ci può essere anche un "payload", che serve per passare un'informazione
+              aggiuntiva, non è obbligatoria.
+            </p>
+          </div>
+          <div class="col">
+            <h3>Cosa è un Reducer?</h3>
+            <p>
+              è una funzione, nello specifico è una "pure function" cioè una funzione che al di la
+              dei dati che gli vengono dati viene sempre lo stesso output. Per esempio una funzione
+              che addiziona due numeri.
+            </p>
+            <p>Non muta i parametri, non esegue cose al di fuori di quello che deve fare</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
